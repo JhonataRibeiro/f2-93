@@ -1,9 +1,10 @@
 
 public class GerenciadoraDeDividas {
-	public void efetuaPagamentoDivida(Divida divida, double valor){
-		if(valor > 100){
-			valor = valor - 8;
-		}
-		divida.setValorPago(divida.getValorPago() + valor); 
+	public void efetuaPagamentoDivida(Divida divida, double valor , String nomePagador, String cnpjPagador){
+		Pagamento pagamento = new Pagamento();
+		pagamento.setCnpjPagador(cnpjPagador);
+		pagamento.setPagador(nomePagador);
+		pagamento.setValor(valor);
+		divida.registra(pagamento); 
 	}
 }

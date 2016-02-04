@@ -15,13 +15,14 @@ public class BalancoEmpresa {
 	}
 	
 	//Metodo para pagamento de divida
-	public void pagaDivida(String cnpjCredor, double valor){
-		if(valor > 100){
-			valor = valor - 8;
-		}
+	public void pagaDivida(String cnpjCredor, double valor, String nomePagador, String cnpjPagador){
 		Divida divida = dividas.get(cnpjCredor);
 		if(divida != null){
-			divida.setValorPago(divida.getValorPago() + valor);
+			Pagamento pagamento = new Pagamento();
+			pagamento.setCnpjPagador(cnpjPagador);
+			pagamento.setCnpjPagador(nomePagador);
+			pagamento.setValor(valor);
+			divida.registra(pagamento);
 		}
 	}
 }

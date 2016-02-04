@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Divida {
 	
@@ -5,7 +6,11 @@ public class Divida {
 		private double valorPago;
 		private String credor;
 		private String cnpjCredor;
+		private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
 		
+		public ArrayList<Pagamento> getPagamentos() {
+			return pagamentos;
+		}
 		public double getTotal() {
 			return total;
 		}
@@ -14,9 +19,6 @@ public class Divida {
 		}
 		public double getValorPago() {
 			return valorPago;
-		}
-		public void setValorPago(double valorPago) {
-			this.valorPago = valorPago;
 		}
 		public String getCredor() {
 			return credor;
@@ -29,5 +31,27 @@ public class Divida {
 		}
 		public void setCnpjCredor(String cnpjCredor) {
 			this.cnpjCredor = cnpjCredor;
+		}
+		
+		private void paga(double valor){
+			if(valor < 0){
+				throw new IllegalArgumentException("Valor inválido!");
+			}
+			if(valor > 100){
+				// Tacha cobrada para valores acima de 100
+				valor  = valor - 8;
+			}
+		
+		this.valorPago +=  valor;
+			
+		}
+		
+		public void registra(Pagamento pagamento){
+			// adicionar a lista de pagamento
+			this.getPagamentos().add(pagamento);
+			// chama o metodo paga
+			this.paga(pagamento.getValor());
+			
+			
 		}
 }
