@@ -5,9 +5,12 @@ public class Divida {
 		private double total;
 		private double valorPago;
 		private String credor;
-		private String cnpjCredor;
+		private Cnpj cnpjCredor = new Cnpj(); 
 		private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
 		
+		public Cnpj getCnpjCredor() {
+			return cnpjCredor;
+		}
 		public ArrayList<Pagamento> getPagamentos() {
 			return pagamentos;
 		}
@@ -26,13 +29,6 @@ public class Divida {
 		public void setCredor(String credor) {
 			this.credor = credor;
 		}
-		public String getCnpjCredor() {
-			return cnpjCredor;
-		}
-		public void setCnpjCredor(String cnpjCredor) {
-			this.cnpjCredor = cnpjCredor;
-		}
-		
 		private void paga(double valor){
 			if(valor < 0){
 				throw new IllegalArgumentException("Valor inválido!");

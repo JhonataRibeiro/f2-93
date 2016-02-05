@@ -1,6 +1,9 @@
 
 public class Pagamento {
 	private String pagador;
+	private String cnpjPagador;
+    private double valor;
+    
     public String getPagador() {
 		return pagador;
 	}
@@ -19,7 +22,4 @@ public class Pagamento {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	private String cnpjPagador;
-    private double valor;
-
 }
