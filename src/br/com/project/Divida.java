@@ -7,12 +7,12 @@ public class Divida {
 		private double valorPago;
 		private String credor;
 		private Cnpj cnpjCredor = new Cnpj(); 
-		private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+		private Pagamentos pagamentos = new Pagamentos();
 		
 		public Cnpj getCnpjCredor() {
 			return cnpjCredor;
 		}
-		public ArrayList<Pagamento> getPagamentos() {
+		public Pagamentos getPagamentos() {
 			return pagamentos;
 		}
 		public double getTotal() {
