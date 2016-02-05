@@ -1,3 +1,4 @@
+package br.com.project;
 
 public class Cnpj {
 	private String valor;

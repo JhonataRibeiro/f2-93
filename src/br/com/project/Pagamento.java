@@ -1,3 +1,4 @@
+package br.com.project;
 
 public class Pagamento {
 	private String pagador;

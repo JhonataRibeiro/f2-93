@@ -1,3 +1,4 @@
+package br.com.project;
 
 public class GerenciadoraDeDividas {
 	public void efetuaPagamentoDivida(Divida divida, double valor , String nomePagador, String cnpjPagador){
