@@ -1,5 +1,7 @@
 package br.com.project;
 
+import java.util.Calendar;
+
 /**
  * 
  * @author jhonataribeiro
@@ -10,7 +12,14 @@ public class Pagamento {
 	private String pagador;
 	private String cnpjPagador;
 	private double valor;
+	private Calendar data;
 	
+	public Calendar getData() {
+		return data;
+	}
+	public void setData(Calendar data) {
+		this.data = data;
+	}
 	public String getPagador() {
 		return pagador;
 	}
