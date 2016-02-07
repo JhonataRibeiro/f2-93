@@ -1,11 +1,17 @@
 package br.com.project;
 
+/**
+ * 
+ * @author jhonataribeiro
+ * @description Classe para registrar todos os pagamentos
+ */
+
 public class Pagamento {
 	private String pagador;
 	private String cnpjPagador;
-    private double valor;
-    
-    public String getPagador() {
+	private double valor;
+	
+	public String getPagador() {
 		return pagador;
 	}
 	public void setPagador(String pagador) {
@@ -22,5 +28,5 @@ public class Pagamento {
 	}
 	public void setValor(double valor) {
 		this.valor = valor;
-	}
+	}	
 }
