@@ -7,7 +7,7 @@ public class Cnpj {
 		return valor;
 	}
 	
-	public void setValor(String novoValor) {
+	public Cnpj(String novoValor) {
 		this.valor = novoValor;
 	}
 	
