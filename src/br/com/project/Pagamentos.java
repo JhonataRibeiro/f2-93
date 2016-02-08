@@ -2,10 +2,13 @@ package br.com.project;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashSet;
 
-public class Pagamentos extends ArrayList<Pagamento> {
+public class Pagamentos{
 	
-
+	private ArrayList<Pagamento> pagamentos = new ArrayList<Pagamento>();
+	
 	private double valorPago;
 	
 
@@ -28,7 +31,7 @@ private void paga(double valor){
 	}
 	
 	public void registra(Pagamento pagamento){
-		this.add(pagamento);
+		this.pagamentos.add(pagamento);
 		this.paga(pagamento.getValor());
 	}
 	
@@ -36,7 +39,7 @@ private void paga(double valor){
 	
 		public ArrayList<Pagamento> pagamentosAntesDe(Calendar data){
 			ArrayList<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
-			for(Pagamento pagamento : this){
+			for(Pagamento pagamento : this.pagamentos){
 				if(pagamento.getData().before(data)){
 					pagamentosFiltrados.add(pagamento);
 				}
@@ -48,7 +51,7 @@ private void paga(double valor){
 		
 		public ArrayList<Pagamento> pagamentosComValorMaiorQue(double valorMinimo){
 			ArrayList<Pagamento> pagamentosComValorMaiorQue = new ArrayList<Pagamento>();
-			for(Pagamento pagamento : this){
+			for(Pagamento pagamento : this.pagamentos){
 				if(pagamento.getValor() > valorMinimo){
 					pagamentosComValorMaiorQue.add(pagamento);
 				}
@@ -59,18 +62,13 @@ private void paga(double valor){
 		// Pagamento do <determinado cliente>
 		public ArrayList<Pagamento> pagamentoDo(String cnpjPagador){
 			ArrayList<Pagamento> pagamentosFiltrados = new ArrayList<Pagamento>();
-			for(Pagamento pagamento : this){
+			for(Pagamento pagamento : this.pagamentos){
 				if(pagamento.getCnpjPagador().equals(cnpjPagador)){
 					pagamentosFiltrados.add(pagamento);
 				}
 			}
 			return pagamentosFiltrados;
 		}
-		
-		@Override
-		public boolean add(Pagamento e) {
-			this.paga(e.getValor());
-			return super.add(e);
-		}
+	
 
 }
