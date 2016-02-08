@@ -16,7 +16,7 @@ public class Pagamentos{
 		return valorPago;
 	}
 	
-private void paga(double valor){
+	private void paga(double valor){
 		
 		if(valor < 0){
 			throw new IllegalArgumentException("Valor inválido para pagamento");

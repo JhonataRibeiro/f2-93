@@ -21,7 +21,7 @@ public class balancoEmpresa {
 	public void pagaDivida(Cnpj cnpjCredor,Pagamento pagamento){
 		Divida divida = dividas.get(cnpjCredor);
 		if(divida != null){
-			divida.getPagamentos().registra(pagamento);
+			divida.registra(pagamento);
 		}
 		
 	}

@@ -38,5 +38,11 @@ public class Cnpj {
 		// TODO Auto-generated method stub
 		return 1;
 	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return this.valor;
+	}
 
 }
