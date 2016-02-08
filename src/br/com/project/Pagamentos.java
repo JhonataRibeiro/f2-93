@@ -20,7 +20,7 @@ private void paga(double valor){
 		}
 		
 		if(this != null){
-			if(valor > 8){
+			if(valor > 100){
 				valor = valor - 8;
 			}
 			this.valorPago += valor;
@@ -65,6 +65,12 @@ private void paga(double valor){
 				}
 			}
 			return pagamentosFiltrados;
+		}
+		
+		@Override
+		public boolean add(Pagamento e) {
+			this.paga(e.getValor());
+			return super.add(e);
 		}
 
 }
