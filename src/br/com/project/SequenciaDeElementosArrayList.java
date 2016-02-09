@@ -1,8 +1,8 @@
 package br.com.project;
 
-public class SequenciaDeElementos {
+public class SequenciaDeElementosArrayList {
 	private final ArrayList colecao;
-	public SequenciaDeElementos(ArrayList colecao){
+	public SequenciaDeElementosArrayList(ArrayList colecao){
 		this.colecao = colecao;
 	}
 	
