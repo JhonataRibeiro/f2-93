@@ -8,6 +8,13 @@ public class Divida {
 	private double total;
 	private String credor;
 	private Cnpj cnpjCredor;
+	private Cpf cpfCredor;
+	public Cpf getCpfCredor() {
+		return cpfCredor;
+	}
+	public void setCpfCredor(Cpf cpfCredor) {
+		this.cpfCredor = cpfCredor;
+	}
 	private Pagamentos pagamentos = new Pagamentos();
 
 	public Cnpj getCnpjCredor() {

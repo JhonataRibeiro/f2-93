@@ -1,6 +1,6 @@
 package br.com.project;
 
-public class Cnpj {
+public class Cnpj implements Documento {
 	private String valor;
 	
 	public String getValor() {
@@ -11,7 +11,7 @@ public class Cnpj {
 		this.valor = novoValor;
 	}
 	
-	public boolean isValid() {
+	public boolean ehValido() {
         return primeiroDigitoVerificador() == primeiroDigitoCorreto()
             && segundoDigitoVerificador() == segundoDigitoCorreto();
       }

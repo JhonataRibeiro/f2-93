@@ -14,6 +14,11 @@ public class executa {
 		pagamentos.registra(pagamento2);
 		System.out.println("Valor total pago " + pagamentos.getValorPago());
 		
+		Iterable<Pagamento> lista = new Pagamentos();
+		for(Pagamento pagamento : pagamentos){
+			System.out.println(pagamento.getValor());
+		}
+		
 	}
 
 }

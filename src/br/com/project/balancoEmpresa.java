@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class balancoEmpresa {
 	
-	private HashMap<Cnpj, Divida> dividas = new HashMap<Cnpj, Divida>();
+	private HashMap<Documento, Divida> dividas = new HashMap<Documento, Divida>();
 	
 	
 	/**
@@ -15,11 +15,12 @@ public class balancoEmpresa {
 	 */
 	
 	public void registraDivida(Divida divida){
-		dividas.put(divida.getCnpjCredor(), divida);
+			dividas.put(divida.getCnpjCredor(), divida);	
+		
 	}
 	
-	public void pagaDivida(Cnpj cnpjCredor,Pagamento pagamento){
-		Divida divida = dividas.get(cnpjCredor);
+	public void pagaDivida(Documento documento,Pagamento pagamento){
+		Divida divida = dividas.get(documento);
 		if(divida != null){
 			divida.registra(pagamento);
 		}
