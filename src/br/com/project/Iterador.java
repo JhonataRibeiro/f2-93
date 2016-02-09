@@ -1,5 +1,5 @@
 package br.com.project;
 
-public interface Colecao {
+public interface Iterador {
 	public Object proximo();
 }

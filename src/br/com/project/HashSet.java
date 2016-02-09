@@ -1,9 +1,13 @@
 package br.com.project;
 
-public class HashSet {
+public class HashSet implements Iteravel {
 	
-	public void remove(Object element){
-		// 
+	public Object proximo(){
+		return null;
+	}
+	
+	public void remove(){
+		
 	}
 	
 	public boolean contains(Object element){
@@ -13,15 +17,11 @@ public class HashSet {
 	public int size(){
 		return 0;
 	}
-	
-	public void clear(){
-		// apaga todos os elementos da coleção
+
+	@Override
+	public Iterador percorrerColecao() {
+		// TODO Auto-generated method stub
+		return new SequenciaDeElementoHashSet(this);
 	}
-	
-	public Object get(int chave){
-		// deveolve elemento associado a esta chave
-		return null;
-	}
-	
 
 }
