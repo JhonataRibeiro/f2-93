@@ -7,18 +7,15 @@ public class Divida {
 	
 	private double total;
 	private String credor;
-	private Cnpj cnpjCredor;
-	private Cpf cpfCredor;
-	public Cpf getCpfCredor() {
-		return cpfCredor;
-	}
-	public void setCpfCredor(Cpf cpfCredor) {
-		this.cpfCredor = cpfCredor;
-	}
+	private Documento documentoCredor;
 	private Pagamentos pagamentos = new Pagamentos();
 
-	public Cnpj getCnpjCredor() {
-		return cnpjCredor;
+	public void setDocumentoCredor(Documento documento) {
+		this.documentoCredor = documento;
+	}
+	
+	public Documento getDocumentoCredor() {
+		return documentoCredor;
 	}
 	public double getTotal() {
 		return total;
@@ -31,11 +28,6 @@ public class Divida {
 	}
 	public void setCredor(String credor) {
 		this.credor = credor;
-	}
-
-	public void setCnpjCredor(Cnpj cnpj) {
-		this.cnpjCredor = cnpj;
-		
 	}
 
 	public void registra(Pagamento pagamento) {

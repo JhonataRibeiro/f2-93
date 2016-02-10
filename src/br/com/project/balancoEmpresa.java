@@ -15,7 +15,7 @@ public class balancoEmpresa {
 	 */
 	
 	public void registraDivida(Divida divida){
-			dividas.put(divida.getCnpjCredor(), divida);	
+			dividas.put(divida.getDocumentoCredor(), divida);	
 		
 	}
 	
