@@ -1,10 +1,15 @@
 package br.com.project;
 
 import java.util.HashMap;
+import java.util.Map;
 
-public class balancoEmpresa {
+public class BalancoEmpresa {
 	
-	private HashMap<Documento, Divida> dividas = new HashMap<Documento, Divida>();
+	private ArmazenadorDeDividas dividas;
+	
+	public BalancoEmpresa(ArmazenadorDeDividas bd){
+		this.dividas = bd;
+	}
 	
 	
 	/**
@@ -15,16 +20,15 @@ public class balancoEmpresa {
 	 */
 	
 	public void registraDivida(Divida divida){
-			dividas.put(divida.getDocumentoCredor(), divida);	
-		
+			dividas.salva(divida);	
 	}
 	
 	public void pagaDivida(Documento documento,Pagamento pagamento){
-		Divida divida = dividas.get(documento);
+		Divida divida = dividas.carrega(documento);
 		if(divida != null){
 			divida.registra(pagamento);
 		}
-		
+		dividas.salva(divida);
 	}
 
 }
