@@ -17,7 +17,7 @@ public class BalancoEmpresa {
 	 * @param cnpjCredor
 	 * @param valor
 	 * @description Classe que registra uma divida
-	 */
+	 */ 
 	
 	public void registraDivida(Divida divida){
 			dividas.salva(divida);	
